@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AttributeScores {
+public class AttributeScore {
 
   @JsonProperty("summaryScore")
   private Score summaryScore;
@@ -18,7 +18,7 @@ public class AttributeScores {
 
   @Override
   public String toString() {
-    return "AttributeScores{" +
+    return "AttributeScore{" +
            "summaryScore=" + summaryScore +
            ", spanScores=" + spanScores.toString() +
            '}';
@@ -26,7 +26,7 @@ public class AttributeScores {
 
   @Getter
   @Setter
-  private static class Score {
+  public static class Score {
 
     @JsonProperty("value")
     private float  value;
@@ -44,7 +44,7 @@ public class AttributeScores {
 
   @Getter
   @Setter
-  private static class SpanScore {
+  public static class SpanScore {
 
     @JsonProperty("begin")
     private int   begin;

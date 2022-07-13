@@ -103,11 +103,8 @@ public class PerspectiveClient {
 
         HttpEntity entity = response.getEntity();
         if (entity != null) {
-          // return it as a String
-          String                 r      = EntityUtils.toString(entity, "UTF-8");
-          AnalyzeCommentResponse result = OBJECT_MAPPER.readValue(r, AnalyzeCommentResponse.class);
-          System.out.println(result);
-          return result;
+          String r = EntityUtils.toString(entity, "UTF-8");
+          return OBJECT_MAPPER.readValue(r, AnalyzeCommentResponse.class);
         }
       }
     } catch (Exception ignored) {
